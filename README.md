@@ -68,8 +68,8 @@ Middleware ensures only the correct user type accesses each section.
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/laravel-lms.git
-cd laravel-lms
+git clone https://github.com/farhanalishah23/Learning-Management-System.git
+cd Learning-Management-System
 ```
 
 ### 2️⃣ Install Dependencies
