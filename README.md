@@ -1,78 +1,139 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# 🎓 Learning Management System – Laravel 7
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+A complete **Learning Management System (LMS)** built using **Laravel 7**, supporting **three roles**: **Admin, Teacher, and Student**. This LMS allows admin to manage teachers, teachers to manage courses and create questions, and students to register, enroll in courses, and submit answers. The app includes full **role-based access control**, dynamic **AJAX-based interactions**, and **teacher-assigned grading**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 👨‍🏫 Admin
+- Create/manage teachers
+- View all students and courses
+- Assign course categories
+- Manage platform content
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🧑‍🏫 Teacher
+- Create courses
+- Add questions to courses (via AJAX modal)
+- View enrolled students
+- Grade student responses (marking system)
 
-## Learning Laravel
+### 👨‍🎓 Student
+- Register/Login to platform
+- Enroll in available courses
+- View teacher's questions dynamically
+- Submit answers (AJAX)
+- See grades from teacher
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tech Stack
 
-## Laravel Sponsors
+| Framework   | Template | Frontend | DB       | AJAX |
+|-------------|----------|----------|----------|------|
+| Laravel 7   | Blade    | Bootstrap 4 | MySQL | jQuery (AJAX) |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+## 🔐 Role-Based Access (via Middleware)
 
-## Contributing
+The app uses custom **Laravel middleware** to secure routes:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Route         | Accessible By     |
+|---------------|-------------------|
+| `/admin/*`    | Admin only        |
+| `/teacher/*`  | Teacher only      |
+| `/student/*`  | Student only      |
 
-## Code of Conduct
+Middleware ensures only the correct user type accesses each section.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 📂 Folder Structure
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+/app
+/routes
+/resources/views
+  ├── /admin
+  ├── /teacher
+  ├── /student
+/public
+```
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/laravel-lms.git
+cd laravel-lms
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+composer install
+```
+
+### 3️⃣ Setup `.env`
+
+```bash
+cp .env.example .env
+```
+
+Edit the DB and mail config:
+
+```env
+DB_DATABASE=lms_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 4️⃣ Run Migrations
+
+```bash
+php artisan migrate
+php artisan db:seed  # If seeder added for roles
+```
+
+### 5️⃣ Serve the App
+
+```bash
+php artisan serve
+```
+
+Visit: `http://localhost:8000`
+
+---
+
+## ⚙️ AJAX Question Submission Flow
+
+- Teacher adds a question → AJAX modal opens → Question saved without page reload  
+- Student views question list → Submits answer via AJAX  
+- Teacher reviews and assigns marks
+
+---
+
+## 🧪 Sample Roles (Dummy Accounts)
+
+```text
+Admin:
+  Email: admin@yopmail.com
+  Password: 12345678
+
+Teacher:
+  Created by admin panel
+
+Student:
+  Registers from frontend
+```
+
+
+## 📄 License
+
+This project is open-source and free to use.
+
+
